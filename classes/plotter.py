@@ -7,21 +7,21 @@ class Plot(ABC):
         """
         Abstract method
         """
-        pass
+        ...
 
     @abstractmethod
     def set_axis_limits(self, **kwargs):
         """
         Abstract method
         """
-        pass
+        ...
 
     @abstractmethod
     def plot(self, **kwargs):
         """
         Abstract method
         """
-        pass
+        ...
 
     @property
     @abstractmethod
@@ -29,4 +29,4 @@ class Plot(ABC):
         """
         Property
         """
-        pass
+        ...
