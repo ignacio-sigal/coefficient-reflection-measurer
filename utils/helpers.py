@@ -1,11 +1,14 @@
 import pyaudio
 import numpy as np
-import scipy.fft as fft
-from utils.constants import RATE, S, DIST, PI, C
+from scipy import fft
 from enum import Enum
+from utils.constants import RATE, S, DIST, PI, C
 
 
 class PlotOptions(Enum):
+    """
+    Different plot options
+    """
     REFLECTION_COEFFICIENT = 0
     ABSORPTION_COEFFICIENT = 1
 

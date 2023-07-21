@@ -2,11 +2,11 @@ from PyQt5.uic import loadUi
 from PyQt5.QtWidgets import QDialog, QLabel
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
+import numpy as np
 from classes.plotter import Plot
 from utils.constants import CHANNELS, RATE
 from utils.helpers import PlotOptions
 from typing import TypeVar
-import numpy as np
 
 
 PlotChild = TypeVar('PlotChild', bound=Plot)

@@ -1,4 +1,5 @@
 import subprocess
+from main import main_app
 
 
 def install_dependencies():
@@ -13,7 +14,6 @@ def install_dependencies():
 
 def main():
     try:
-        from main import main_app
         main_app()
     except Exception as e:
         print(f"Error at execution time: {e}")
