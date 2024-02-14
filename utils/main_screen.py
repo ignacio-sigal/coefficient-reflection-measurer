@@ -1,30 +1,48 @@
+"""
+Here you'll find the implementation of the main screen.
+It has three different methods. Two are intended to start/stop
+the execution and other is the one in charge to build the
+instance correctly.
+"""
+from typing import TypeVar
+import numpy as np
 from PyQt5.uic import loadUi
 from PyQt5.QtWidgets import QDialog, QLabel
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
-import numpy as np
 from classes.plotter import Plot
+from classes.singleton import Singleton
 from utils.constants import CHANNELS, RATE
 from utils.helpers import PlotOptions
-from typing import TypeVar
+from utils.stream import AudioStream
 
 
 PlotChild = TypeVar('PlotChild', bound=Plot)
 
 
 class MainScreenException(BaseException):
+    """Custom exception"""
     pass
 
 
 class MainScreen(QDialog):
-    def __init__(self, plotter: type(PlotChild) = None):
-        super(MainScreen, self).__init__()
+    """
+    This is the class in charge of having the necessary information to display a UI.
+    Also, the one in charge of start and stop the coefficient reflection measurement.
+    """
+    __metaclass__ = Singleton
+
+    def __init__(self, plotter: type(PlotChild)):
+        """
+        Initializing MainScreen instance
+        """
+        super().__init__()
         loadUi("gui.ui", self)
         self._output_data_index = 0
         self._started = False
         self._pixmap = QPixmap('images/background.jpg')
         self._label = QLabel(self)
-        self._plot_object = plotter or Plot()
+        self._plot_object = plotter
 
     def load_gui_data(self, devices_list: list = None):
         """
@@ -57,7 +75,6 @@ class MainScreen(QDialog):
         Function that runs after clicking button start. In this case it start plotting
         if isn't already.
         """
-        from utils.stream import AudioStream
 
         mic = self.comboBox.currentIndex()
         plot_signal = PlotOptions(self.radio_butt_abs.isChecked()).value
@@ -75,12 +92,9 @@ class MainScreen(QDialog):
 
             f = np.arange(-RATE / 2, RATE / 2, RATE / (period * RATE))  # Frequency to plot
 
-            self._plot_object.create_figures(
+            self._plot_object.init_figures(
                 x_data=f,
-                y_data=np.random.rand(period * RATE)
-            )
-
-            self._plot_object.set_axis_limits(
+                y_data=np.random.rand(period * RATE),
                 f_min=int(self.f_min.text()),
                 f_max=int(self.f_max.text())
             )

@@ -1,3 +1,7 @@
+"""
+File containing utilities such as classes and functions not strongly related with other classes to be part of
+their structure.
+"""
 import pyaudio
 import numpy as np
 from scipy import fft

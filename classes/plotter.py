@@ -15,7 +15,7 @@ class Plot(ABC):
         """
 
     @abstractmethod
-    def set_axis_limits(self, **kwargs):
+    def _set_axis_limits(self, **kwargs):
         """
         Abstract method
         """
