@@ -22,7 +22,7 @@ class MainScreen(QDialog):
         loadUi("gui.ui", self)
         self._output_data_index = 0
         self._started = False
-        self._pixmap = QPixmap('background.jpg')
+        self._pixmap = QPixmap('images/background.jpg')
         self._label = QLabel(self)
         self._plot_object = plotter or Plot()
 
