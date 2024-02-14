@@ -1,7 +1,11 @@
 # coefficient-reflection-measurer
 The coefficient-reflection-measurer application is a final project from the Faculty of Exact Sciences, Engineering, and Surveying at the National University of Rosario, Argentina, developed to obtain the degree in Electronic Engineering. This tool allows you to plot the reflection or absorption coefficient along with the power spectrum of the input signal from one of the microphones in real-time.
 
-Screenshot of the application in action
+Image of the UI:
+![Alt text](./images/main_screen.png?raw=true "Title")
+
+Image of the plot:
+![Alt text](./images/plot.png?raw=true "Title")
 
 ## Installation
 To install and run the application, follow these steps:
@@ -40,6 +44,7 @@ At this time, external contributions to the project are not accepted.
 
 ## Authors
 Luciano Gentile Falcone (lucianogentilefalcone)
+
 Ignacio Sigal (ignacio-sigal)
 
 ## Project Status
