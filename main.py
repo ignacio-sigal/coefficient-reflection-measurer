@@ -1,12 +1,20 @@
+"""
+Main file
+"""
+
 import sys
-from utils.helpers import get_input_output_devices_names
 from PyQt5.QtWidgets import QApplication, QStackedWidget
+from utils.helpers import get_input_output_devices_names
 from utils.main_screen import MainScreen
 from utils.constants import WINDOW_WIDTH, WINDOW_HEIGHT
 from utils.plot import ReflectionPlot
 
 
 def main_app():
+    """
+    This function is executed after installing dependencies. It instantiate the necessary classes
+    and then shows the main screen.
+    """
     # Getting list of input devices
     devices_list = get_input_output_devices_names()
 
@@ -28,5 +36,5 @@ def main_app():
     widget.show()
     try:
         sys.exit(app.exec())
-    except SystemExit as e:
-        print(e)
+    except SystemExit as error:
+        print(error)
