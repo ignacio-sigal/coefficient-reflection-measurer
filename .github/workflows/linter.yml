@@ -22,7 +22,7 @@ jobs:
         pip install pylint
     - name: Running Black formatter
       run: |
-        black . -t py39
+        python -m black . -t py39
         git commit -m "Code reformatted by Black" && git push || echo "No changes to commit"
     - name: Analysing the code with pylint
       run: |
