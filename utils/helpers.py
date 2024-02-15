@@ -1,16 +1,27 @@
+"""
+File containing utilities such as classes and functions not strongly
+related with other classes to be part of their structure.
+"""
+from enum import Enum
+
 import pyaudio
 import numpy as np
-import scipy.fft as fft
+from scipy import fft
 from utils.constants import RATE, S, DIST, PI, C
-from enum import Enum
 
 
 class PlotOptions(Enum):
+    """
+    Different plot options
+    """
+
     REFLECTION_COEFFICIENT = 0
     ABSORPTION_COEFFICIENT = 1
 
 
-def process_raw_data(f, input_data: type(np.array)) -> tuple[type(np.array), type(np.array)]:
+def process_raw_data(
+    f, input_data: type(np.array)
+) -> tuple[type(np.array), type(np.array)]:
     """
     This function process the microphone input signal and calculates the fast fourier
     transform along with the reflection coefficient for each frequency.
@@ -40,8 +51,8 @@ def get_input_output_devices_names() -> list:
     device_list = []
     p = pyaudio.PyAudio()
     for i in range(0, 10):
-        print(i, p.get_device_info_by_index(i)['name'])
-        device_list.append(p.get_device_info_by_index(i)['name'])
+        print(i, p.get_device_info_by_index(i)["name"])
+        device_list.append(p.get_device_info_by_index(i)["name"])
     return device_list
 
 

@@ -1,20 +1,30 @@
+"""
+Plotter class
+"""
+
 from abc import ABC, abstractmethod
 
 
 class Plot(ABC):
-    @abstractmethod
-    def __init__(self, *args):
-        pass
+    """
+    This abc class is intended to be used when a plot must be done.
+    """
 
     @abstractmethod
-    def set_axis_limits(self, **kwargs):
-        pass
+    def __init__(self, **kwargs):
+        """
+        Abstract method
+        """
 
     @abstractmethod
     def plot(self, **kwargs):
-        pass
+        """
+        Abstract method
+        """
 
     @property
     @abstractmethod
-    def started(self, *args):
-        pass
+    def started(self, **kwargs):
+        """
+        Property
+        """
