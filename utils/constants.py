@@ -1,6 +1,7 @@
 """
 This file contains constants used in different moments of the execution.
 """
+
 import numpy as np
 
 WINDOW_WIDTH = 800

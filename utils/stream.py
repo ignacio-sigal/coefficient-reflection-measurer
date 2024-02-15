@@ -6,11 +6,17 @@ class InitStreamException(BaseException):
 
 
 class AudioStream:
-    def __init__(self, channels: int = None, rate: int = None, chunk: int = None, input_device: int = None):
+    def __init__(
+        self,
+        channels: int = None,
+        rate: int = None,
+        chunk: int = None,
+        input_device: int = None,
+    ):
         input_args = (channels, rate, chunk, input_device)
         try:
             if not all([True for x in input_args if x is not None]):
-                raise InitStreamException('Not all arguments were given')
+                raise InitStreamException("Not all arguments were given")
             self._channels = channels
             self._rate = rate
             self._chunk = chunk
@@ -22,7 +28,8 @@ class AudioStream:
                 input=True,
                 output=False,
                 frames_per_buffer=chunk,
-                input_device_index=input_device)
+                input_device_index=input_device,
+            )
         except InitStreamException as e:
             print(e)
 

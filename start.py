@@ -1,6 +1,7 @@
 """
 This file contain the necessary functions to install deps and run the application.
 """
+
 import subprocess
 import sys
 
@@ -22,7 +23,8 @@ def install_dependencies():
 
 if __name__ == "__main__":
     """
-    When ran, this function install the calls the install_deps function and then runs the application.
+    When ran, this function install the calls the install_deps function and then
+    runs the application.
     """
     install_dependencies()
     try:

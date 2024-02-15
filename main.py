@@ -1,6 +1,7 @@
 """
 Main file
 """
+
 import sys
 from PyQt5.QtWidgets import QApplication, QStackedWidget
 from utils.helpers import get_input_output_devices_names
