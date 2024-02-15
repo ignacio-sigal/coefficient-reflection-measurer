@@ -2,11 +2,11 @@
 File containing utilities such as classes and functions not strongly
 related with other classes to be part of their structure.
 """
+from enum import Enum
 
 import pyaudio
 import numpy as np
 from scipy import fft
-from enum import Enum
 from utils.constants import RATE, S, DIST, PI, C
 
 

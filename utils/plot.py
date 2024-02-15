@@ -28,6 +28,9 @@ class ReflectionPlot(Plot):
     This class is the one intended to plot the coefficient measurement.
     """
 
+    # pylint: disable=too-many-instance-attributes
+    # Thirteen is reasonable in this case.
+
     def __init__(self):
         super().__init__()
         self._plot_started = False
@@ -41,7 +44,6 @@ class ReflectionPlot(Plot):
         self.line2 = None
         self.f_min = 100
         self.f_max = 1000
-        pass
 
     @property
     def started(self) -> bool:
@@ -101,7 +103,8 @@ class ReflectionPlot(Plot):
         }
 
         output_data_pd = pd.DataFrame(output_data)
-        file_name = f"{PlotOptions(plot_selection).name.lower().lower()}_{self.output_data_index}.csv"
+        file_name = \
+            f"{PlotOptions(plot_selection).name.lower().lower()}_{self.output_data_index}.csv"
         output_data_pd.to_csv(file_name, index=False, sep=";")
 
     def init_figures(

@@ -11,7 +11,7 @@ class Plot(ABC):
     """
 
     @abstractmethod
-    def __init__(self, *args):
+    def __init__(self, **kwargs):
         """
         Abstract method
         """
@@ -24,7 +24,7 @@ class Plot(ABC):
 
     @property
     @abstractmethod
-    def started(self, *args):
+    def started(self, **kwargs):
         """
         Property
         """

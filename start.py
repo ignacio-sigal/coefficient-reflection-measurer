@@ -22,10 +22,6 @@ def install_dependencies():
 
 
 if __name__ == "__main__":
-    """
-    When ran, this function install the calls the install_deps function and then
-    runs the application.
-    """
     install_dependencies()
     try:
         main_app()
